@@ -123,16 +123,15 @@
 		CGContextAddLineToPoint(c, a[i].longitude, a[i].latitude);
 	}
 	
-	CGContextClosePath(c);
+	CGContextSetRGBFillColor(c, .0, 1.0, .0, 1.0);	//green for Prospect Park
+   	
 
-	CGContextSetRGBFillColor(c, .31, .71, .3, 1.0);	//green for Prospect Park
+    //CGContextBeginPath(c);
     [self drawLake: c];
-  	CGContextFillPath(c);
-    
-    CGContextBeginPath(c);
+	//CGContextSetRGBFillColor(c, 0.0, 0.0, 1.0, 1);
+	CGContextClosePath(c);
+    CGContextFillPath(c);
 
-	CGContextSetRGBFillColor(c, 0.0, 1.0, 0, .5);
-	CGContextFillPath(c);
 }
 
 - (void)drawLake:(CGContextRef) c
@@ -287,10 +286,10 @@
        {40.65563874006115, -73.966805934906}
    };
     static const size_t n = sizeof lake / sizeof lake[0];
-	//CGContextMoveToPoint(c, 40.655687575923785, -73.96693468093872);
+
 	for (size_t i = 1; i < n; ++i) {
 		CGContextAddLineToPoint( c, lake[i].longitude, lake[i].latitude);
 	}
-	CGContextClosePath( c );
+	//CGContextClosePath( c );
  }
 @end
