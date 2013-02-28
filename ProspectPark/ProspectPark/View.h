@@ -9,4 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface View: UIView
+- (void) drawLake: (CGContextRef) c;
 @end
